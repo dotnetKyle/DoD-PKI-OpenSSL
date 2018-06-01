@@ -40,4 +40,6 @@
 
        openssl x509 -noout -text -in public/signing.cert.pem
 
-Next: Create a localhost Server Certificate
+Next: Create a Client Certificate
+
+Back To: Table of Contents

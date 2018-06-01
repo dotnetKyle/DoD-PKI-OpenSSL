@@ -39,4 +39,8 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
     Key Usage is `Digital Signature`, `Certificate Sign`, and `CRL Sign`
 
-Next: Create the Intermediate Certificate
+Next: Create the Intermediate Certificate for signing Server Certificates
+
+or
+
+Next: Create the Signing Certificate for signing Client Certificates

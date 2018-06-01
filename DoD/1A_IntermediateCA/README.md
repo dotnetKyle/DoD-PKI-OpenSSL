@@ -40,4 +40,6 @@ cd back into the signing directory:
 
     openssl x509 -noout -text -in public/intermediate.cert.pem
 
-Next: Create the DoD Signing CA
+Next: Create a Server Certificate
+
+Back To: Table of Contents
