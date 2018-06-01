@@ -1,5 +1,9 @@
 # Create the Intermediate CA
 
+[Table of Contents](../../README.md) / Create the Intermediate CA
+
+-----------------------------------------------------------------
+
 1. Create the Intermediate private key
 
        openssl genrsa -aes256 -out private/intermediate.key.pem 4096
@@ -40,6 +44,8 @@ cd back into the signing directory:
 
     openssl x509 -noout -text -in public/intermediate.cert.pem
 
-Next: Create a Server Certificate
+Next: [Create a Server Certificate](README_CreateServerCert.md)
 
-Back To: Table of Contents
+-----------------------------------------------------------------
+
+[Table of Contents](../../README.md) / Create the Intermediate CA

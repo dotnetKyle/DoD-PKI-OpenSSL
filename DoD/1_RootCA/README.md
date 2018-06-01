@@ -1,5 +1,9 @@
 # Create the Root Certificate
 
+[Table of Contents](../../README.md) / Create the Root Certificate
+
+------------------------------------------------------------------
+
 The root key is private *(\*.key.pem)* and should be kept absolutely secure (usually on an air gapped machine).
 
 > Note: that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
@@ -39,8 +43,11 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
     Key Usage is `Digital Signature`, `Certificate Sign`, and `CRL Sign`
 
-Next: Create the Intermediate Certificate for signing Server Certificates
+Next: [Create the Intermediate Certificate for signing Server Certificates](../1A_IntermediateCA/README.md)
 
 or
 
-Next: Create the Signing Certificate for signing Client Certificates
+Next: [Create the Signing Certificate for signing Client Certificates](../1B_SigningCA/README.md)
+
+------------------------------------------------------------------
+[Table of Contents](../../README.md) / Create the Root Certificate

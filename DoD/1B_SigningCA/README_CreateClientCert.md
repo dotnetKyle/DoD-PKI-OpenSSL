@@ -1,5 +1,9 @@
 # Create a Client Certificate
 
+[Table of Contents](../../README.md) / [Create the Signing CA](README.md) / Create a Client Certificate
+
+-----------------------------------------------------------------------------------------------
+
 1. cd into the SigningCA directory:
 
        cd C:/Certificates/1B_SigningCA
@@ -30,4 +34,6 @@
 
    The X509v3 Extended Key Usage should say `Client Authentication` & `Email Protection`
 
-Back To: Table of Contents
+-----------------------------------------------------------------------------------------------
+
+[Table of Contents](../../README.md) / [Create the Signing CA](README.md) / Create a Client Certificate

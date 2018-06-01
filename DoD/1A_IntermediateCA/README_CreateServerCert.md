@@ -1,5 +1,9 @@
 # Create a localhost Server Certificate
 
+[Table of Contents](../../README.md) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
+
+---------------------------------------------------------------------------------------
+
 1. cd into the intermediate directory:
 
        cd C:/Certificates/1A_IntermediateCA
@@ -28,6 +32,6 @@
 
    The X509v3 Extended Key Usage should say `TLS Web Server Authentication`
 
-Next: Create Client certificates
+---------------------------------------------------------------------------------------
 
-Back To: Table of Contents
+[Table of Contents](../../README.md) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
