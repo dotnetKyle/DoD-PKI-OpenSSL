@@ -2,7 +2,7 @@
 
 The root key is private *(\*.key.pem)* and should be kept absolutely secure (usually on an air gapped machine).
 
-> Please note that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
+> Note: that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
 
 1. Open a command window and CD into the Root CA folder at: C:\Certificates\DoD\1_RootCA
 
@@ -18,9 +18,9 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 5. Enter the password for the private key you are using
 
-6. Press Enter on all the prompts to use the defaults 
+6. Press `Enter` on all the prompts to use the defaults
 
-   *(It's important you remember the settings you enter on the ROOT CA because the intermediates CAs will have to match exactly)*
+   *(It's important you remember the settings you enter on the `Root CA` because some of the `Intermediates CA` settings will have to match exactly)*
 
 7. You can verify the root ca by using the following command:
 
@@ -37,6 +37,6 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
         CN = MOCK DoD Root CA,
         emailAddress = MockS6@soc.mil
 
-    Key Usage is Digital Signature, Certificate Sign, CRL Sign
+    Key Usage is `Digital Signature`, `Certificate Sign`, and `CRL Sign`
 
 Next: Create the Intermediate Certificate
