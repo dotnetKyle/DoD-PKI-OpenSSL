@@ -1,27 +1,31 @@
-cd into the intermediate directory:
+# Create a localhost Server Certificate
 
-cd C:/Certificates/1A_IntermediateCA
+1. cd into the intermediate directory:
 
-openssl genrsa -out private/localhost.key.pem 2048
+       cd C:/Certificates/1A_IntermediateCA
 
-(Note: you omit the -aes256 option to create a cert without a password for server certs)
+2. Generate the private key
 
-Create a certificate signing request.
+       openssl genrsa -out private/localhost.key.pem 2048
 
-openssl req -config intermediateca.cnf -key private/localhost.key.pem -new -sha256 -out csr/localhost.csr.pem
+   *Note: you omit the `-aes256` option to create a cert without a password for server certs. If you create a server cert with a password you will have to enter the password when the server restarts!*
 
-Now use the intermediate CA to sign the server certificate request.
+3. Create a certificate signing request.
 
-openssl ca -config intermediateca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/localhost.csr.pem -out public/localhost.cert.pem
+       openssl req -config intermediateca.cnf -key private/localhost.key.pem -new -sha256 -out csr/localhost.csr.pem
 
-Select Y to sign the certificate
+4. Now use the ***intermediate CA*** to sign the server certificate request.
 
-Select Y to commit the certificate
+       openssl ca -config intermediateca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/localhost.csr.pem -out public/localhost.cert.pem
 
-Verify the cert:
+   Select `y` to sign the certificate
 
-openssl x509 -noout -text -in public/localhost.cert.pem
+   Select `y` to commit the certificate
 
-The X509v3 Extended Key Usage should say TLS Web Server Authentication
+5. Verify the cert:
 
-TODO: Use the chain file created earlier to verify that the cert has a valid chain of trust.
+       openssl x509 -noout -text -in public/localhost.cert.pem
+
+   The X509v3 Extended Key Usage should say `TLS Web Server Authentication`
+
+Next: Create Client certificates
