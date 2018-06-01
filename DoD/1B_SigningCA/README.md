@@ -39,3 +39,5 @@
        cd 1B_SigningCA
 
        openssl x509 -noout -text -in public/signing.cert.pem
+
+Next: Create a localhost Server Certificate

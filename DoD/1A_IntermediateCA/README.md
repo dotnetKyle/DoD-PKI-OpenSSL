@@ -39,3 +39,5 @@ cd back into the signing directory:
     cd 1A_IntermediateCA
 
     openssl x509 -noout -text -in public/intermediate.cert.pem
+
+Next Create the DoD Signing CA
