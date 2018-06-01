@@ -14,11 +14,11 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
 
 ## Table of Contents
 
-- Create the DoD Root CA
-  - Create the DoD Intermediate CA
-    - Create a localhost Server Certificate
-  - Create the DoD Signing CA
-    - Create a Client Certificate
+- [Create the DoD Root CA](DoD/1_RootCA/README.md)
+  - [Create the DoD Intermediate CA](DoD/1A_IntermediateCA/README.md)
+    - [Create a localhost Server Certificate](DoD/1A_IntermediateCA/README_CreateServerCert.md)
+  - [Create the DoD Signing CA](DoD/1B_SigningCA/README.md)
+    - [Create a Client Certificate](DoD/1B_SigningCA/README_CreateClientCert.md)
 
 ## Setup
 
