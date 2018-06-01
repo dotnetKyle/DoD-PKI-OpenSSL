@@ -1,41 +1,42 @@
-Setup: 
-  1. Copy the contents of the git repo into a folder at C:\Certificates
-  2. Install OpenSSL
-  3. Add OpenSSL to the PATH (system environment variables)
+# Create the Root Key
 
-To Create the Root Key:
-The root key is private (*.key.pem) and should be kept absolutely secure (usually on an air gapped machine).
+The root key is private *(\*.key.pem)* and should be kept absolutely secure (usually on an air gapped machine).
 
-Open a command window and CD into the Root CA folder at: C:\Certificates\DoD\1_RootCA
+> Please note that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
 
-Use the following command to create the private key:
+1. Open a command window and CD into the Root CA folder at: C:\Certificates\DoD\1_RootCA
 
-  openssl genrsa -aes256 -out private/rootca.pem.key
+2. Use the following command to create the private key:
 
-Follow the prompts to create a password for the private key.  Do not lose this password!  There is no password reset.
+       openssl genrsa -aes256 -out private/rootca.pem.key
 
-Use the following command to create the public certificate:
+3. Follow the prompts to create a password for the private key.  Do not lose this password!  There is no password reset.
 
-  openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cert.pem
+4. Use the following command to create the public certificate:
 
-Enter the password for the private key you are using...
-Press Enter on all the prompts to use the defaults 
-(It's important you remember the settings you enter on the ROOT CA because they will have to match exactly the intermediate CAs)
+       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cert.pem
 
-You can verify the root ca by using the following command:
+5. Enter the password for the private key you are using
 
-  openssl x509 -noout -text -in public/rootca.cert.pem
+6. Press Enter on all the prompts to use the defaults 
 
-Since it is self-signed, it should have all the default values (or the values you entered in the Issuer and Subject).
-    C = US
-    ST = GA
-    L = Fort Benning
-    O = DoD
-    O = USASOC
-    OU = 75RR
-    CN = MOCK DoD Root CA,
-    emailAddress = MockS6@soc.mil
+   *(It's important you remember the settings you enter on the ROOT CA because the intermediates CAs will have to match exactly)*
 
-Key Usage is Digital Signature, Certificate Sign, CRL Sign
+7. You can verify the root ca by using the following command:
+
+       openssl x509 -noout -text -in public/rootca.cert.pem
+
+    Since it is self-signed, it should have all the default values (or the values you entered in the Issuer and Subject).
+
+        C = US
+        ST = GA
+        L = Fort Benning
+        O = DoD
+        O = USASOC
+        OU = 75RR
+        CN = MOCK DoD Root CA,
+        emailAddress = MockS6@soc.mil
+
+    Key Usage is Digital Signature, Certificate Sign, CRL Sign
 
 Next: Create the Intermediate Certificate
