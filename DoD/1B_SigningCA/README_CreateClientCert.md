@@ -1,31 +1,31 @@
-Create a client cert
+# Create a Client Certificate
 
-cd into the SigningCA directory:
+1. cd into the SigningCA directory:
 
-cd C:/Certificates/1B_SigningCA
+       cd C:/Certificates/1B_SigningCA
 
-openssl genrsa -aes256 -out private/username.key.pem 2048
+2. Create a Client private key
 
-Enter a secure password
+       openssl genrsa -aes256 -out private/username.key.pem 2048
 
-Create a certificate signing request.
+   Enter a secure password
 
-openssl req -config signingca.cnf -key private/username.key.pem -new -sha256 -out csr/username.csr.pem
+3. Create a certificate signing request.
 
-Enter the password for the -key
+       openssl req -config signingca.cnf -key private/username.key.pem -new -sha256 -out csr/username.csr.pem
 
-Now use the signing CA to sign the client certificate request.
+   Enter the password you created for the private key
 
-openssl ca -config signingca.cnf -extensions usr_cert -days 375 -notext -md sha256 -in csr/username.csr.pem -out public/username.cert.pem
+4. Now use the signing CA to sign the client certificate request.
 
-Select Y to sign the certificate
+       openssl ca -config signingca.cnf -extensions usr_cert -days 365 -notext -md sha256 -in csr/username.csr.pem -out public/username.cert.pem
 
-Select Y to commit the certificate
+   Select `y` to sign the certificate
 
-Verify the cert:
+   Select `y` to commit the certificate
 
-openssl x509 -noout -text -in public/username.cert.pem
+5. Verify the cert:
 
-The X509v3 Extended Key Usage should say TLS Web Server Authentication
+       openssl x509 -noout -text -in public/username.cert.pem
 
-TODO: Use the chain file created earlier to verify that the cert has a valid chain of trust.
+   The X509v3 Extended Key Usage should say `Client Authentication` & `Email Protection`

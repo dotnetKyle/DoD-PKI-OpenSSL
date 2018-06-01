@@ -12,7 +12,7 @@
 
     Most of the options need to match the Root CA.
 
-    Common Name, however ***MUST*** be different than the Root CA.
+    `Common Name`, however must be different than the Root CA.  Use `DoD Intermediate CA` for `Common Name`.
 
 3. Now to create the Intermediate CA public Key, you must sign it using the root CA.
 
@@ -25,9 +25,9 @@
 
          openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in C:/Certificates/DoD/1A_IntermediateCA/csr/intermediate.csr.pem -out C:/Certificates/DoD/1A_IntermediateCA/public/intermediate.cert.pem
 
-Select 'y' to sign the certificate.
+Select `y` to sign the certificate.
 
-Select 'y' to commit the certificate into the database.
+Select `y` to commit the certificate into the database.
 
 This will create the cert, and add the cert to the index, if its the first cert it will throw a minor error while adding it to the index and then create the index for you.
 
@@ -40,4 +40,4 @@ cd back into the signing directory:
 
     openssl x509 -noout -text -in public/intermediate.cert.pem
 
-Next Create the DoD Signing CA
+Next: Create the DoD Signing CA
