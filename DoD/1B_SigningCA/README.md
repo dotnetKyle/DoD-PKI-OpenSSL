@@ -1,37 +1,41 @@
-To create the Signing CA private key:
+# Create the DoD Signing CA
 
-    openssl genrsa -aes256 -out private/signing.key.pem 4096
+1. To create the Signing CA private key:
 
-    Enter a strong password
+       openssl genrsa -aes256 -out private/signing.key.pem 4096
 
-Create a signing request for the root CA to sign your signingCA cert:
+       Enter a strong password
 
-    openssl req -config signingca.cnf -new -sha256 -key private/signing.key.pem -out csr/signing.csr.pem
+2. Create a signing request for the root CA to sign your signingCA cert:
 
-    Most of the options need to match the Root CA.
+       openssl req -config signingca.cnf -new -sha256 -key private/signing.key.pem -out csr/signing.csr.pem
 
-    Common Name, however MUST be different than the Root CA.
+   Most of the options need to match the Root CA.
 
-Now to create the signingCA public Key, you must sign it using the root CA.
+   Common Name, however MUST be different than the Root CA.
 
-cd into the Root CA folder:
+3. Now to create the signingCA public Key, you must sign it using the root CA.
 
-    cd ..
-    cd 1_RootCA
+   cd into the Root CA folder:
 
-Create the cert using the CSR:
-    openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 365 -notext -md sha256 -in C:/Certificates/DoD/1B_SigningCA/csr/signing.csr.pem -out C:/Certificates/DoD/1B_SigningCA/public/signing.cert.pem
+       cd ..
+       cd 1_RootCA
 
-Select Y to sign the certificate.
+4. Create the cert using the CSR:
 
-Select Y to commit the certificate into the database.
+       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 365 -notext -md sha256 -in C:/Certificates/DoD/1B_SigningCA/csr/signing.csr.pem -out C:/Certificates/DoD/1B_SigningCA/public/signing.cert.pem
 
-This will create the cert, and add the cert to the index, if its the first one it will throw a minor error and then create the index for you.
+   Select 'y' to sign the certificate.
 
-Verify the CERT:
+   Select 'y' to commit the certificate into the database.
 
-cd back into the signing directory:
-    cd ..
-    cd 1B_SigningCA
+   This will create the cert, and add the cert to the index, if its the first one it will throw a minor error and then create the index for you.
 
-    openssl x509 -noout -text -in public/signing.cert.pem
+5. Verify the CERT:
+
+   cd back into the signing directory:
+
+       cd ..
+       cd 1B_SigningCA
+
+       openssl x509 -noout -text -in public/signing.cert.pem
