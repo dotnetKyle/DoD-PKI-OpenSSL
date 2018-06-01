@@ -1,4 +1,4 @@
-# Create the Root Key
+# Create the Root Certificate
 
 The root key is private *(\*.key.pem)* and should be kept absolutely secure (usually on an air gapped machine).
 
