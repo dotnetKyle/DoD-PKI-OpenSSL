@@ -1,6 +1,6 @@
 # Create the Root Certificate
 
-[Table of Contents](../../README.md) / Create the Root Certificate
+[Table of Contents](../../README.md#table-of-contents) / Create the Root Certificate
 
 ------------------------------------------------------------------
 
@@ -50,4 +50,4 @@ or
 Next: [Create the Signing Certificate for signing Client Certificates](../1B_SigningCA/README.md)
 
 ------------------------------------------------------------------
-[Table of Contents](../../README.md) / Create the Root Certificate
+[Table of Contents](../../README.md#table-of-contents) / Create the Root Certificate

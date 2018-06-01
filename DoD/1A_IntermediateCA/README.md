@@ -1,6 +1,6 @@
 # Create the Intermediate CA
 
-[Table of Contents](../../README.md) / Create the Intermediate CA
+[Table of Contents](../../README.md#table-of-contents) / Create the Intermediate CA
 
 -----------------------------------------------------------------
 
@@ -48,4 +48,4 @@ Next: [Create a Server Certificate](README_CreateServerCert.md)
 
 -----------------------------------------------------------------
 
-[Table of Contents](../../README.md) / Create the Intermediate CA
+[Table of Contents](../../README.md#table-of-contents) / Create the Intermediate CA
