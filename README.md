@@ -12,14 +12,6 @@ This will allow you to create the following certificate chains:
 
 This system has two intermediaries, a DoD Intermediate CA (for servers) and a DoD Signing CA (for users).  You can use the Root CA to make more intermediaries and you can use the intermediaries to create more client certificates for testing your software.
 
-## Table of Contents
-
-- [Create the DoD Root CA](DoD/CA/README.md)
-  - [Create the DoD Intermediate CA](DoD/CA/Intermediate/README.md)
-    - [Create a localhost Server Certificate](DoD/CA/Intermediate/README_CreateServerCert.md)
-  - [Create the DoD Signing CA](DoD/CA/Signing/README.md)
-    - [Create a Client Certificate](DoD/CA/Signing/README_CreateClientCert.md)
-
 ## Setup
 
 >
@@ -32,3 +24,11 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
   3. Install OpenSSL
 
   4. Add OpenSSL to the PATH (system environment variables)
+
+## Table of Contents
+
+- [Create the DoD Root CA](DoD/CA/README.md)
+  - [Create the DoD Intermediate CA](DoD/CA/Intermediate/README.md)
+    - [Create a localhost Server Certificate](DoD/CA/Intermediate/README_CreateServerCert.md)
+  - [Create the DoD Signing CA](DoD/CA/Signing/README.md)
+    - [Create a Client Certificate](DoD/CA/Signing/README_CreateClientCert.md)
