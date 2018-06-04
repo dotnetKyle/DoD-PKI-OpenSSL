@@ -40,22 +40,24 @@
          -in C:/Certificates/DoD/1A_IntermediateCA/csr/intermediate.csr.pem ^
          -out C:/Certificates/DoD/1A_IntermediateCA/public/intermediate.cert.pem
 
-Select `y` to sign the certificate.
+   Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
 
-Select `y` to commit the certificate into the database.
+   Select `y` to sign the certificate.
 
-This will create the cert, and add the cert to the index, if its the first cert it will throw a minor error while adding it to the index and then create the index for you.
+   Select `y` to commit the certificate into the database.
 
-Verify the CERT:
+   This will create the cert, and add the cert to the index, if its the first cert it will throw a minor error while adding it to the index and then create the index for you.
 
-cd back into the signing directory:
+4. Verify the CERT:
 
-    cd ..
-    cd 1A_IntermediateCA
+   cd back into the signing directory:
 
-    openssl x509 -noout -text -in public/intermediate.cert.pem
+       cd ..
+       cd 1A_IntermediateCA
 
-Next: [Create a Server Certificate](README_CreateServerCert.md)
+       openssl x509 -noout -text -in public/intermediate.cert.pem
+
+   Next: [Create a Server Certificate](README_CreateServerCert.md)
 
 -----------------------------------------------------------------
 

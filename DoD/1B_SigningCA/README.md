@@ -40,6 +40,8 @@
        -in C:/Certificates/DoD/1B_SigningCA/csr/signing.csr.pem ^
        -out C:/Certificates/DoD/1B_SigningCA/public/signing.cert.pem
 
+   Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
+   
    Select `y` to sign the certificate.
 
    Select `y` to commit the certificate into the database.
