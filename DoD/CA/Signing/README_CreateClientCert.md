@@ -22,7 +22,7 @@
 
 4. Keep using the signing CA to sign the client certificate request.
 
-       openssl ca -config signingca.cnf -extensions usr_cert -days 365 -notext -md sha256 -in csr/username.csr.pem -out certs/username.cert.pem
+       openssl ca -config signingca.cnf -extensions usr_cert -days 365 -notext -md sha256 -in csr/username.csr.pem -out public/username.cert.pem
 
    Note: Be sure to use the Signing CA's password to sign the certificate request.
 
@@ -32,7 +32,7 @@
 
 5. Verify the cert:
 
-       openssl x509 -noout -text -in certs/username.cert.pem
+       openssl x509 -noout -text -in public/username.cert.pem
 
    The X509v3 Extended Key Usage should say `Client Authentication` & `Email Protection`
 

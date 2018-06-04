@@ -32,7 +32,7 @@
 
    * Create the cert using the CSR:
 
-         openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Intermediate/csr/intermediate.csr.pem -out Intermediate/certs/intermediate.cert.pem
+         openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Intermediate/csr/intermediate.csr.pem -out Intermediate/public/intermediate.cert.pem
 
    Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
 
@@ -50,7 +50,7 @@
 
    Verify the cert:
 
-       openssl x509 -noout -text -in certs/intermediate.cert.pem
+       openssl x509 -noout -text -in public/intermediate.cert.pem
 
 Next: [Create a Server Certificate](README_CreateServerCert.md)
 

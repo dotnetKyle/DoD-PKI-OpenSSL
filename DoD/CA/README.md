@@ -20,7 +20,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 4. Use the following command to create the public certificate:
 
-       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out certs/rootca.cert.pem
+       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cert.pem
 
 5. Enter the password for the private key you are using
 
@@ -32,7 +32,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 7. You can verify the root ca by using the following command:
 
-       openssl x509 -noout -text -in certs/rootca.cert.pem
+       openssl x509 -noout -text -in public/rootca.cert.pem
 
     Since it is self-signed, it should have all the default values (or the values you entered in the Issuer and Subject).
 
