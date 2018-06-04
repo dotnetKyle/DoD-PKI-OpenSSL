@@ -6,7 +6,7 @@
 
 1. cd into the intermediate directory:
 
-       cd C:/Certificates/1A_IntermediateCA
+       cd C:/Certificates/Intermediate
 
 2. Generate the private key
 
@@ -20,7 +20,7 @@
 
 4. Now use the ***intermediate CA*** to sign the server certificate request.
 
-       openssl ca -config intermediateca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/localhost.csr.pem -out public/localhost.cert.pem
+       openssl ca -config intermediateca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/localhost.csr.pem -out certs/localhost.cert.pem
 
    Select `y` to sign the certificate
 
@@ -28,7 +28,7 @@
 
 5. Verify the cert:
 
-       openssl x509 -noout -text -in public/localhost.cert.pem
+       openssl x509 -noout -text -in certs/localhost.cert.pem
 
    The X509v3 Extended Key Usage should say `TLS Web Server Authentication`
 
