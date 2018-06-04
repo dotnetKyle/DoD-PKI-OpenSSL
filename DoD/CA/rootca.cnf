@@ -1,13 +1,13 @@
-# Mock DoD Intermediate CA configuration file.
-# For generating Mock Intermediate CAs
+# Mock DoD Root CA configuration file.
+# For generating Mock Root CAs
 
 [ ca ]
 default_ca = CA_default
 
 [ CA_default ]
 # You must place all certs in C:/Certificates/DoD
-dir               = C:/Certificates/DoD/1A_IntermediateCA
-certs             = $dir/public
+dir               = C:/Certificates/DoD/CA
+certs             = $dir/certs
 crl_dir           = $dir/crl
 new_certs_dir     = $dir/newcerts
 database          = $dir/index.txt
@@ -15,42 +15,37 @@ serial            = $dir/serial
 RANDFILE          = $dir/private/.rand
 
 # The root key and root certificate.
-private_key       = $dir/private/intermediate.key.pem
-certificate       = $dir/public/intermediate.cert.pem
+private_key       = $dir/private/rootca.key.pem
+certificate       = $certs/rootca.cert.pem
 
 # For certificate revocation lists.
 crlnumber         = $dir/crlnumber
-crl               = $dir/crl/intermediateca.crl.pem
+crl               = $dir/crl/rootca.crl.pem
 crl_extensions    = crl_ext
 default_crl_days  = 30
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md        = sha256
-
 name_opt          = ca_default
 cert_opt          = ca_default
 default_days      = 7305
 preserve          = no
-policy            = policy_loose
+policy            = policy_strict
 
-[ policy_loose ]
-# Allow the intermediate CA to sign a more diverse range of certificates.
-# See the POLICY FORMAT section of the `ca` man page.
+[ policy_strict ]
+# The root CA should only sign intermediate certificates that match.
+# See the POLICY FORMAT section of `man ca`.
 countryName             = match
 stateOrProvinceName     = match
 localityName            = match
 organizationName        = match
-organizationalUnitName  = supplied
+organizationalUnitName  = optional
 commonName              = supplied
-emailAddress            = supplied
+emailAddress            = optional
 
 [ req ]
 # Options for the `req` tool (`man req`).
 default_bits        = 4096
 distinguished_name  = req_distinguished_name
 string_mask         = utf8only
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md          = sha256
 
 # Extension to add when the -x509 option is used.
@@ -89,16 +84,9 @@ authorityKeyIdentifier = keyid:always,issuer
 basicConstraints = critical, CA:true
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 
-[ server_cert ]
-# Extensions for server certificates (`man x509v3_config`).
-basicConstraints = CA:FALSE
-nsCertType = server
-nsComment = "OpenSSL Generated Server Certificate"
+[ v3_intermediate_ca ]
+# Extensions for a typical intermediate CA (`man x509v3_config`).
 subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid,issuer:always
-keyUsage = critical, digitalSignature, keyEncipherment
-extendedKeyUsage = serverAuth
-
-[ crl_ext ]
-# Extension for CRLs (`man x509v3_config`).
-authorityKeyIdentifier=keyid:always
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true, pathlen:0
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign

@@ -1,13 +1,13 @@
-# Mock DoD Signing CA configuration file.
-# For generating Mock Signing CAs
+# Mock DoD Intermediate CA configuration file.
+# For generating Mock Intermediate CAs
 
 [ ca ]
 default_ca = CA_default
 
 [ CA_default ]
 # You must place all certs in C:/Certificates/DoD
-dir               = C:/Certificates/DoD/1B_SigningCA
-certs             = $dir/public
+dir               = C:/Certificates/DoD/CA/Intermediate
+certs             = $dir/certs
 crl_dir           = $dir/crl
 new_certs_dir     = $dir/newcerts
 database          = $dir/index.txt
@@ -15,18 +15,15 @@ serial            = $dir/serial
 RANDFILE          = $dir/private/.rand
 
 # The root key and root certificate.
-private_key       = $dir/private/signing.key.pem
-certificate       = $dir/public/signing.cert.pem
+private_key       = $dir/private/intermediate.key.pem
+certificate       = $certs/intermediate.cert.pem
 
 # For certificate revocation lists.
 crlnumber         = $dir/crlnumber
-crl               = $dir/crl/signingca.crl.pem
+crl               = $dir/crl/intermediateca.crl.pem
 crl_extensions    = crl_ext
 default_crl_days  = 30
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md        = sha256
-
 name_opt          = ca_default
 cert_opt          = ca_default
 default_days      = 7305
@@ -40,17 +37,15 @@ countryName             = match
 stateOrProvinceName     = match
 localityName            = match
 organizationName        = match
-organizationalUnitName  = supplied
+organizationalUnitName  = optional
 commonName              = supplied
-emailAddress            = supplied
+emailAddress            = optional
 
 [ req ]
 # Options for the `req` tool (`man req`).
-default_bits        = 2048
+default_bits        = 4096
 distinguished_name  = req_distinguished_name
 string_mask         = utf8only
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md          = sha256
 
 # Extension to add when the -x509 option is used.
@@ -89,15 +84,15 @@ authorityKeyIdentifier = keyid:always,issuer
 basicConstraints = critical, CA:true
 keyUsage = critical, digitalSignature, cRLSign, keyCertSign
 
-[ usr_cert ]
-# Extensions for client certificates (`man x509v3_config`).
+[ server_cert ]
+# Extensions for server certificates (`man x509v3_config`).
 basicConstraints = CA:FALSE
-nsCertType = client, email
-nsComment = "OpenSSL Generated Client Certificate"
+nsCertType = server
+nsComment = "OpenSSL Generated Server Certificate"
 subjectKeyIdentifier = hash
-authorityKeyIdentifier = keyid,issuer
-keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
-extendedKeyUsage = clientAuth, emailProtection
+authorityKeyIdentifier = keyid,issuer:always
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
 
 [ crl_ext ]
 # Extension for CRLs (`man x509v3_config`).
