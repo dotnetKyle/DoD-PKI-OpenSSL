@@ -8,7 +8,7 @@
 
     cd into the folder:
 
-       cd C:\Certificates\1B_SigningCA
+       cd C:\Certificates\DoD\CA\Signing
 
     Create the private key:
 
@@ -18,9 +18,7 @@
 
 2. Create a signing request for the root CA to sign your signingCA cert:
 
-       openssl req -config signingca.cnf -new -sha256 ^
-       -key private/signing.key.pem ^
-       -out csr/signing.csr.pem
+       openssl req -config signingca.cnf -new -sha256 -key private/signing.key.pem -out csr/signing.csr.pem
 
    Most of the options need to match the Root CA.
 
@@ -28,20 +26,16 @@
 
 3. Now to create the signingCA public Key, you must sign it using the root CA.
 
-   cd into the Root CA folder:
+   cd back into the Root CA folder:
 
        cd ..
-       cd 1_RootCA
 
 4. Create the cert using the CSR:
 
-       openssl ca -config rootca.cnf -extensions v3_intermediate_ca ^
-       -days 730 -notext -md sha256 ^
-       -in C:/Certificates/DoD/1B_SigningCA/csr/signing.csr.pem ^
-       -out C:/Certificates/DoD/1B_SigningCA/public/signing.cert.pem
+       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Signing/csr/signing.csr.pem -out Signing/certs/signing.cert.pem
 
    Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
-   
+
    Select `y` to sign the certificate.
 
    Select `y` to commit the certificate into the database.
@@ -52,10 +46,9 @@
 
    cd back into the signing directory:
 
-       cd ..
-       cd 1B_SigningCA
+       cd Signing
 
-       openssl x509 -noout -text -in public/signing.cert.pem
+       openssl x509 -noout -text -in certs/signing.cert.pem
 
 Next: [Create a Client Certificate](README_CreateClientCert.md)
 

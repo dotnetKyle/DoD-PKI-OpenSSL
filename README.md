@@ -14,11 +14,11 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
 
 ## Table of Contents
 
-- [Create the DoD Root CA](DoD/1_RootCA/README.md)
-  - [Create the DoD Intermediate CA](DoD/1A_IntermediateCA/README.md)
-    - [Create a localhost Server Certificate](DoD/1A_IntermediateCA/README_CreateServerCert.md)
-  - [Create the DoD Signing CA](DoD/1B_SigningCA/README.md)
-    - [Create a Client Certificate](DoD/1B_SigningCA/README_CreateClientCert.md)
+- [Create the DoD Root CA](DoD/CA/README.md)
+  - [Create the DoD Intermediate CA](DoD/CA/Intermediate/README.md)
+    - [Create a localhost Server Certificate](DoD/CA/Intermediate/README_CreateServerCert.md)
+  - [Create the DoD Signing CA](DoD/CA/Signing/README.md)
+    - [Create a Client Certificate](DoD/CA/Signing/README_CreateClientCert.md)
 
 ## Setup
 
@@ -27,5 +27,8 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
 
          git clone https://github.com/KBuroz/DoD-PKI-OpenSSL.git C:\Certificates
 
-  2. Install OpenSSL
-  3. Add OpenSSL to the PATH (system environment variables)
+  2. Run PrepareDirectory.bat by double clicking on `C:\Certificates\PrepareDirectory.bat`
+
+  3. Install OpenSSL
+
+  4. Add OpenSSL to the PATH (system environment variables)

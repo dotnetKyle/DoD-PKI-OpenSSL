@@ -10,7 +10,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 1. Open a command window and cd into the Root CA folder
 
-       cd C:\Certificates\DoD\1_RootCA
+       cd C:\Certificates\DoD\CA
 
 2. Use the following command to create the private key:
 
@@ -20,7 +20,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 4. Use the following command to create the public certificate:
 
-       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cert.pem
+       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out certs/rootca.cert.pem
 
 5. Enter the password for the private key you are using
 
@@ -28,11 +28,11 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
    Note: Use something similar to `MOCK DoD Root CA` for the common name.
 
-   *(It's important you remember the settings you enter on the `Root CA` because some of the `Intermediates CA` settings will have to match exactly)*
+   *(It's important you remember the settings you enter on the `Root CA` because some of the `Intermediate CA` settings will have to match exactly)*
 
 7. You can verify the root ca by using the following command:
 
-       openssl x509 -noout -text -in public/rootca.cert.pem
+       openssl x509 -noout -text -in certs/rootca.cert.pem
 
     Since it is self-signed, it should have all the default values (or the values you entered in the Issuer and Subject).
 
@@ -47,11 +47,11 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
     Key Usage is `Digital Signature`, `Certificate Sign`, and `CRL Sign`
 
-Next: [Create the Intermediate Certificate for signing Server Certificates](../1A_IntermediateCA/README.md)
+Next: [Create the Intermediate Certificate for signing Server Certificates](Intermediate/README.md)
 
 or
 
-Next: [Create the Signing Certificate for signing Client Certificates](../1B_SigningCA/README.md)
+Next: [Create the Signing Certificate for signing Client Certificates](Signing/README.md)
 
 ------------------------------------------------------------------
 [Table of Contents](../../README.md#table-of-contents) / Create the Root Certificate

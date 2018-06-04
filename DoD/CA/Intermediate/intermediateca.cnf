@@ -6,8 +6,8 @@ default_ca = CA_default
 
 [ CA_default ]
 # You must place all certs in C:/Certificates/DoD
-dir               = C:/Certificates/DoD/1A_IntermediateCA
-certs             = $dir/public
+dir               = C:/Certificates/DoD/CA/Intermediate
+certs             = $dir/certs
 crl_dir           = $dir/crl
 new_certs_dir     = $dir/newcerts
 database          = $dir/index.txt
@@ -16,7 +16,7 @@ RANDFILE          = $dir/private/.rand
 
 # The root key and root certificate.
 private_key       = $dir/private/intermediate.key.pem
-certificate       = $dir/public/intermediate.cert.pem
+certificate       = $certs/intermediate.cert.pem
 
 # For certificate revocation lists.
 crlnumber         = $dir/crlnumber

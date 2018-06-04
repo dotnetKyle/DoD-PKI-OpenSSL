@@ -8,7 +8,7 @@
 
     cd into the folder:
 
-       cd C:\Certificates\1A_IntermediateCA
+       cd C:\Certificates\DoD\CA\Intermediate
 
     Create the private key:
 
@@ -18,9 +18,7 @@
 
 2. Create a signing request for the root CA to sign and issue your intermediate cert:
 
-       openssl req -config intermediateca.cnf -new -sha256 ^
-       -key private/intermediate.key.pem ^
-       -out csr/intermediate.csr.pem
+       openssl req -config intermediateca.cnf -new -sha256 -key private/intermediate.key.pem -out csr/intermediate.csr.pem
 
     Most of the options need to match the Root CA.
 
@@ -31,14 +29,10 @@
    * cd into the Root CA folder:
 
          cd ..
-         cd 1_RootCA
 
    * Create the cert using the CSR:
 
-         openssl ca -config rootca.cnf -extensions v3_intermediate_ca ^
-         -days 730 -notext -md sha256 ^
-         -in C:/Certificates/DoD/1A_IntermediateCA/csr/intermediate.csr.pem ^
-         -out C:/Certificates/DoD/1A_IntermediateCA/public/intermediate.cert.pem
+         openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Intermediate/csr/intermediate.csr.pem -out Intermediate/certs/intermediate.cert.pem
 
    Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
 
@@ -50,14 +44,15 @@
 
 4. Verify the CERT:
 
-   cd back into the signing directory:
+   cd back into the Intermediate directory:
 
-       cd ..
-       cd 1A_IntermediateCA
+       cd Intermediate
 
-       openssl x509 -noout -text -in public/intermediate.cert.pem
+   Verify the cert:
 
-   Next: [Create a Server Certificate](README_CreateServerCert.md)
+       openssl x509 -noout -text -in certs/intermediate.cert.pem
+
+Next: [Create a Server Certificate](README_CreateServerCert.md)
 
 -----------------------------------------------------------------
 
