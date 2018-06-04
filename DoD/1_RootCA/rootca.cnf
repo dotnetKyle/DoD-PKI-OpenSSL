@@ -39,7 +39,7 @@ localityName            = match
 organizationName        = match
 organizationalUnitName  = optional
 commonName              = supplied
-emailAddress            = supplied
+emailAddress            = optional
 
 [ req ]
 # Options for the `req` tool (`man req`).

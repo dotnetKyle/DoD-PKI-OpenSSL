@@ -23,10 +23,7 @@ crlnumber         = $dir/crlnumber
 crl               = $dir/crl/intermediateca.crl.pem
 crl_extensions    = crl_ext
 default_crl_days  = 30
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md        = sha256
-
 name_opt          = ca_default
 cert_opt          = ca_default
 default_days      = 7305
@@ -40,17 +37,15 @@ countryName             = match
 stateOrProvinceName     = match
 localityName            = match
 organizationName        = match
-organizationalUnitName  = supplied
+organizationalUnitName  = optional
 commonName              = supplied
-emailAddress            = supplied
+emailAddress            = optional
 
 [ req ]
 # Options for the `req` tool (`man req`).
 default_bits        = 4096
 distinguished_name  = req_distinguished_name
 string_mask         = utf8only
-
-# SHA-1 is deprecated, so use SHA-2 instead.
 default_md          = sha256
 
 # Extension to add when the -x509 option is used.

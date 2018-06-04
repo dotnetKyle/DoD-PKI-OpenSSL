@@ -8,11 +8,13 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 > Note: that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
 
-1. Open a command window and CD into the Root CA folder at: C:\Certificates\DoD\1_RootCA
+1. Open a command window and cd into the Root CA folder
+
+       cd C:\Certificates\DoD\1_RootCA
 
 2. Use the following command to create the private key:
 
-       openssl genrsa -aes256 -out private/rootca.pem.key
+       openssl genrsa -aes256 -out private/rootca.key.pem
 
 3. Follow the prompts to create a password for the private key.  Do not lose this password!  There is no password reset.
 
@@ -23,6 +25,8 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 5. Enter the password for the private key you are using
 
 6. Press `Enter` on all the prompts to use the defaults
+
+   Note: Use something similar to `MOCK DoD Root CA` for the common name.
 
    *(It's important you remember the settings you enter on the `Root CA` because some of the `Intermediates CA` settings will have to match exactly)*
 
