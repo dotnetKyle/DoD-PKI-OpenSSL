@@ -32,7 +32,7 @@
 
 4. Create the cert using the CSR:
 
-       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Signing/csr/signing.csr.pem -out Signing/certs/signing.cert.pem
+       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Signing/csr/signing.csr.pem -out Signing/public/signing.cert.pem
 
    Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
 
@@ -48,7 +48,7 @@
 
        cd Signing
 
-       openssl x509 -noout -text -in certs/signing.cert.pem
+       openssl x509 -noout -text -in public/signing.cert.pem
 
 Next: [Create a Client Certificate](README_CreateClientCert.md)
 
