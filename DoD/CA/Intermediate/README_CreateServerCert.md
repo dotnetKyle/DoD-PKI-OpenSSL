@@ -32,7 +32,9 @@
 
        openssl x509 -noout -text -in public/localhost.cert.pem
 
-   The X509v3 Extended Key Usage should say `TLS Web Server Authentication`
+   The `X509v3 Extended Key Usage` should say `TLS Web Server Authentication`
+
+   The `X509v3 Subject Alternative Name` should say `DNS:localhost, IP Address:127.0.0.1` or whatever DNS/IP you chose in step 4.
 
 ---------------------------------------------------------------------------------------
 
