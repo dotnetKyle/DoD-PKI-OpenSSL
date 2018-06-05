@@ -19,11 +19,14 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
 
          git clone https://github.com/KBuroz/DoD-PKI-OpenSSL.git C:\Certificates
 
-  2. Run PrepareDirectory.bat by double clicking on `C:\Certificates\PrepareDirectory.bat`
+  2. Run PrepareDirectory.bat to create the files needed by OpenSSL:
 
-  3. Install OpenSSL
+         cd C:\Certificates
+         PrepareDirectory.bat
 
-  4. Add OpenSSL to the PATH (system environment variables)
+  3. Install OpenSSL if it isn't already
+
+  4. Finally, add OpenSSL to the PATH (system environment variables)
 
 ## Table of Contents
 
