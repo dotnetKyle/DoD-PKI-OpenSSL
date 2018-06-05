@@ -1,6 +1,6 @@
 # Create a localhost Server Certificate
 
-[Table of Contents](../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
+[Table of Contents](../../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
 
 ---------------------------------------------------------------------------------------
 
@@ -34,4 +34,4 @@
 
 ---------------------------------------------------------------------------------------
 
-[Table of Contents](../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
+[Table of Contents](../../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
