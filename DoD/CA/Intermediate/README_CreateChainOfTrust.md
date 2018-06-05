@@ -4,7 +4,12 @@
 
 ---------------------------------------------------------------------------------------
 
-> In order for the end user's browser to trust your certificate, it must be able to track your certificate from Server cert all the way to Root CA (which should be trusted on the machine).  Because of this, you need to provide a chain from one cert to the next when sending the cert across the wire, this is called a chain of trust.
+> In order for the end user's browser to trust your certificate, it must be able to track your certificate from the `Server cert` all the way to the `Root CA`.  Remember the chain looks like this:
+> - DoD Root CA (Trusted on client)
+>   - DoD Intermediate CA (Not trusted on client)
+>     - Server Certificate (Issued by Intermediate)
+>
+> Without the `Intermediate CA` being trusted on the machine, the browser will have no way of verifying that the `Intermediate CA` was Issued By the trusted `Root CA`.  Because of this, you need to provide a chain from one cert to the next when sending the cert across the network.  You can do this by creating a chain of trust.
 
 1. cd into the CA directory:
 
