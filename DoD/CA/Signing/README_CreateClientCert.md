@@ -1,6 +1,6 @@
 # Create a Client Certificate
 
-[Table of Contents](../../README.md#table-of-contents) / [Create the Signing CA](README.md) / Create a Client Certificate
+[Table of Contents](../../../README.md#table-of-contents) / [Create the Signing CA](README.md) / Create a Client Certificate
 
 -----------------------------------------------------------------------------------------------
 
@@ -40,4 +40,4 @@
 
 -----------------------------------------------------------------------------------------------
 
-[Table of Contents](../../README.md#table-of-contents) / [Create the Signing CA](README.md) / Create a Client Certificate
+[Table of Contents](../../../README.md#table-of-contents) / [Create the Signing CA](README.md) / Create a Client Certificate

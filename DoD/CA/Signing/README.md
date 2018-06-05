@@ -1,6 +1,6 @@
 # Create the DoD Signing CA
 
-[Table of Contents](../../README.md#table-of-contents) / Create the Signing CA
+[Table of Contents](../../../README.md#table-of-contents) / Create the Signing CA
 
 ------------------------------------------------------------
 
@@ -54,4 +54,4 @@ Next: [Create a Client Certificate](README_CreateClientCert.md)
 
 ------------------------------------------------------------
 
-[Table of Contents](../../README.md#table-of-contents) / Create the Signing CA
+[Table of Contents](../../../README.md#table-of-contents) / Create the Signing CA
