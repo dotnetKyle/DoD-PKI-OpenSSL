@@ -15,6 +15,7 @@ type nul > DoD\CA\Intermediate\index.txt
 echo 1000 > DoD\CA\Intermediate\serial
 echo 1000 > DoD\CA\Intermediate\crlnumber
 mkdir DoD\CA\Intermediate\public
+mkdir DoD\CA\Intermediate\chain
 mkdir DoD\CA\Intermediate\crl
 mkdir DoD\CA\Intermediate\csr
 mkdir DoD\CA\Intermediate\newcerts
