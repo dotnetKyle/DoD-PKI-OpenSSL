@@ -22,6 +22,8 @@
 
        openssl ca -config intermediateca.cnf -extensions server_cert -days 375 -notext -md sha256 -in csr/localhost.csr.pem -out public/localhost.cert.pem
 
+   > Note: that in `intermediateca.cnf`, in the extension `server_cert`, there is a section that defines the `X509v3 Subject Alternative Name` as `DNS:localhost, IP:127.0.0.1`.  If you want to use additional or different DNS/IP combinations, you need to modify this file before running the `openssl ca` command for the server certificate.  This section is required for a server cert to be trusted properly by a browser.
+
    Select `y` to sign the certificate
 
    Select `y` to commit the certificate
