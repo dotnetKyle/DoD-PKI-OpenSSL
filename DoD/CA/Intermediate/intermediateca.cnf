@@ -93,6 +93,13 @@ subjectKeyIdentifier = hash
 authorityKeyIdentifier = keyid,issuer:always
 keyUsage = critical, digitalSignature, keyEncipherment
 extendedKeyUsage = serverAuth
+subjectAltName = @subject_alt
+
+[ subject_alt ]
+# Subject alt name for RFC 2818
+DNS.1 = localhost 
+IP.1 = 127.0.0.1 
+
 
 [ crl_ext ]
 # Extension for CRLs (`man x509v3_config`).
