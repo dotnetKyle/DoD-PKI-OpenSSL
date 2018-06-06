@@ -32,7 +32,7 @@
    * Right-click on the `Certificates` node under the `Trusted Root Certification Authorities` node
    * Under `All Tasks` select `Import...`
    * You should see the `Certificate Import Wizard`, click `Next >`
-   * Click `Browse...` and select your .pem file you created under the CA folder. (C:\Certificates\CA\public\rootca.cert.pem)
+   * Click `Browse...` and select your .pem file you created under the CA folder. (C:\Certificates\CA\public\rootca.cer)
      > Note: you will need to change the File Type on the dialog to `All Files (\*.\*)` to select a .pem file type
    * Click `Next >`
    * Select `Place all certificates in the following store` and make sure `Trusted Root Certification Authorities` is selected
