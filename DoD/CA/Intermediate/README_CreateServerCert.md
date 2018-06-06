@@ -36,6 +36,12 @@
 
    The `X509v3 Subject Alternative Name` should say `DNS:localhost, IP Address:127.0.0.1` or whatever DNS/IP you chose in step 4.
 
+6. Create the PFX file:
+
+   > In order for you to import your certificates into a windows server (like IIS), you will need to create a PKCS #12 archive.
+
+       openssl pkcs12 -export -in public/localhost.cert.pem -inkey private/localhost.key.pem -out pfx/localhost.pfx
+
 ---------------------------------------------------------------------------------------
 
 [Table of Contents](../../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / Create a localhost Server Certificate
