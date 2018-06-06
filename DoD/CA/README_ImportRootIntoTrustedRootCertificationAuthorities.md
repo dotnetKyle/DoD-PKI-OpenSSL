@@ -1,6 +1,6 @@
 # Import the Root CA onto Client
 
-[Table of Contents](../../../README.md#table-of-contents) / [Create the Root CA](README.md) / Import the Root CA onto Client
+[Table of Contents](../../README.md#table-of-contents) / [Create the Root CA](README.md) / Import the Root CA onto Client
 
 ---------------------------------------------------------------------------------------
 
@@ -50,4 +50,4 @@ Next: [Create the Signing Certificate for signing Client Certificates](Signing/R
 
 ---------------------------------------------------------------------------------------
 
-[Table of Contents](../../../README.md#table-of-contents) / [Create the Root CA](README.md) / Import the Root CA onto Client
+[Table of Contents](../../README.md#table-of-contents) / [Create the Root CA](README.md) / Import the Root CA onto Client
