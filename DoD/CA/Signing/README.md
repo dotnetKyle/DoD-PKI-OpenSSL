@@ -50,7 +50,7 @@
 
        openssl x509 -noout -text -in public/signing.cert.pem
 
-Next: [Create a Client Certificate](README_CreateClientCert.md)
+Next: [Create a Client Certificate](README-Create-Client-Cert.md)
 
 ------------------------------------------------------------
 

@@ -52,7 +52,7 @@
 
        openssl x509 -noout -text -in public/intermediate.cert.pem
 
-Next: [Create a Server Certificate](README_CreateServerCert.md)
+Next: [Create a Server Certificate](README-Create-Server-Cert.md)
 
 -----------------------------------------------------------------
 
