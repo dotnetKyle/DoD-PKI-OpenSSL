@@ -12,13 +12,13 @@
 
     Create the private key:
 
-       openssl genrsa -aes256 -out private/signing.key.pem 4096
+       openssl genrsa -aes256 -out private/signing.key 4096
 
     Enter a strong password
 
 2. Create a signing request for the root CA to sign your signingCA cert:
 
-       openssl req -config signingca.cnf -new -sha256 -key private/signing.key.pem -out csr/signing.csr.pem
+       openssl req -config signingca.cnf -new -sha256 -key private/signing.key -out csr/signing.csr.pem
 
    Most of the options need to match the Root CA.
 
@@ -32,7 +32,7 @@
 
 4. Create the cert using the CSR:
 
-       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Signing/csr/signing.csr.pem -out Signing/public/signing.cert.pem
+       openssl ca -config rootca.cnf -extensions v3_intermediate_ca -days 730 -notext -md sha256 -in Signing/csr/signing.csr.pem -out Signing/public/signing.cer
 
    Note: You need to enter the Root CA's password here because the Root CA is signing the Intermediate CA.
 
@@ -48,7 +48,7 @@
 
        cd Signing
 
-       openssl x509 -noout -text -in public/signing.cert.pem
+       openssl x509 -noout -text -in public/signing.cer
 
 Next: [Create a Client Certificate](README-Create-Client-Cert.md)
 

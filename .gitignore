@@ -13,6 +13,8 @@ serial.old
 crlnumber
 # Ignore any cert that is generated
 *.pem
+*.cer
+*.key
 
 # User-specific files
 *.suo

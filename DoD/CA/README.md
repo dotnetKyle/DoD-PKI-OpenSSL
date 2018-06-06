@@ -4,7 +4,7 @@
 
 ------------------------------------------------------------------
 
-The root key is private *(\*.key.pem)* and should be kept absolutely secure (usually on an air gapped machine).
+The root key is private *(\*.key)* and should be kept absolutely secure (usually on an air gapped machine).
 
 > Note: that paths to all the certificates must be correct (the repository should be cloned into C:\Certificates) otherwise you will have to re-path all the files used in this installation.
 
@@ -14,13 +14,13 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 2. Use the following command to create the private key:
 
-       openssl genrsa -aes256 -out private/rootca.key.pem
+       openssl genrsa -aes256 -out private/rootca.key
 
 3. Follow the prompts to create a password for the private key.  Do not lose this password!  There is no password reset.
 
 4. Use the following command to create the public certificate:
 
-       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cert.pem
+       openssl req -config rootca.cnf -key private/rootca.key -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cer
 
 5. Enter the password for the private key you are using
 
@@ -32,7 +32,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
 7. You can verify the root ca by using the following command:
 
-       openssl x509 -noout -text -in public/rootca.cert.pem
+       openssl x509 -noout -text -in public/rootca.cer
 
     Since it is self-signed, it should have all the default values (or the values you entered in the Issuer and Subject).
 
