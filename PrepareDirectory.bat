@@ -19,6 +19,7 @@ mkdir DoD\CA\Intermediate\crl
 mkdir DoD\CA\Intermediate\csr
 mkdir DoD\CA\Intermediate\newcerts
 mkdir DoD\CA\Intermediate\private
+mkdir DoD\CA\Intermediate\pfx
 
 echo Preparing Signing directory...
 type nul > DoD\CA\Signing\index.txt
