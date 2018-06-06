@@ -31,6 +31,7 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
 ## Table of Contents
 
 - [Create the DoD Root CA](DoD/CA/README.md)
+  - [Import the Root CA onto Client](DoD/CA/README_ImportRootIntoTrustedRootCertificationAuthorities.md)
   - [Create the DoD Intermediate CA](DoD/CA/Intermediate/README.md)
     - [Create a chain of trust](DoD/CA/Intermediate/README_CreateChainOfTrust.md)
     - [Create a localhost Server Certificate](DoD/CA/Intermediate/README_CreateServerCert.md)
