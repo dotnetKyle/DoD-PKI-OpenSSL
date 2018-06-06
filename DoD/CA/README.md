@@ -47,11 +47,7 @@ The root key is private *(\*.key.pem)* and should be kept absolutely secure (usu
 
     Key Usage is `Digital Signature`, `Certificate Sign`, and `CRL Sign`
 
-Next: [Create the Intermediate Certificate for signing Server Certificates](Intermediate/README.md)
-
-or
-
-Next: [Create the Signing Certificate for signing Client Certificates](Signing/README.md)
+Next: [Import the Root CA into the client](README_ImportRootIntoTrustedRootCertificationAuthorities.md)
 
 ------------------------------------------------------------------
 [Table of Contents](../../README.md#table-of-contents) / Create the Root Certificate
