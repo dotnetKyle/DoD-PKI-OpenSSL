@@ -20,7 +20,7 @@ The root key is private *(\*.key)* and should be kept absolutely secure (usually
 
 4. Use the following command to create the public certificate:
 
-       openssl req -config rootca.cnf -key private/rootca.key.pem -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cer
+       openssl req -config rootca.cnf -key private/rootca.key -new -x509 -days 7305 -sha256 -extensions v3_ca -out public/rootca.cer
 
 5. Enter the password for the private key you are using
 
