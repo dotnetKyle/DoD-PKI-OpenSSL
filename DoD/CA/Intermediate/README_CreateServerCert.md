@@ -38,9 +38,9 @@
 
 6. Create the PFX file:
 
-   > In order for you to import your certificates into a windows server (like IIS), you will need to create a PKCS #12 archive.
+   > In order for you to import your certificates into a windows server (like IIS), you will need to create a PKCS #12 archive.  We're including the intermediate-root chain so that the client can associate the `intermediate cert` with the `root cert`.
 
-       openssl pkcs12 -export -in public/localhost.cert.pem -inkey private/localhost.key.pem -out pfx/localhost.pfx
+       openssl pkcs12 -export -in public/localhost.cert.pem -inkey private/localhost.key.pem -out pfx/localhost.pfx -certfile chain/root-intermediate-chain.pem
 
 ---------------------------------------------------------------------------------------
 
