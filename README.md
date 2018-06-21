@@ -34,5 +34,6 @@ This system has two intermediaries, a DoD Intermediate CA (for servers) and a Do
   - [Import the Root CA onto Client](DoD/CA/README-Import-Root-Into-Trusted-Root-Certification-Authorities.md)
   - [Create the DoD Intermediate CA](DoD/CA/Intermediate/README.md)
     - [Create a localhost Server Certificate](DoD/CA/Intermediate/README-Create-Server-Cert.md)
+      - [Import the Server Certificate into IIS](DoD/CA/Intermediate/README-Import-Into-IIS.md)
   - [Create the DoD Signing CA](DoD/CA/Signing/README.md)
     - [Create a Client Certificate](DoD/CA/Signing/README-Create-Client-Cert.md)
