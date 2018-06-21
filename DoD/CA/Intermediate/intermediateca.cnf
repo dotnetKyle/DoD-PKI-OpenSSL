@@ -68,9 +68,9 @@ countryName_default              = US
 stateOrProvinceName_default      = GA
 localityName_default             = Fort Benning
 organizationName_default         = U.S. Government
-0.organizationalUnitName_default = USASOC
-1.organizationalUnitName_default = 75RR
-2.organizationalUnitName_default = HQ
+0.organizationalUnitName_default = DoD
+1.organizationalUnitName_default = USASOC
+2.organizationalUnitName_default = 75RR
 emailAddress_default             = MockS6@soc.mil
 
 # Optionally, specify some constraints
