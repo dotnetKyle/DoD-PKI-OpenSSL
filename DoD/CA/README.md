@@ -39,8 +39,9 @@ The root key is private *(\*.key)* and should be kept absolutely secure (usually
         C = US
         ST = GA
         L = Fort Benning
-        O = DoD
-        O = USASOC
+        O = U.S. Government
+        OU = DoD
+        OU = USASOC
         OU = 75RR
         CN = MOCK DoD Root CA,
         emailAddress = MockS6@soc.mil

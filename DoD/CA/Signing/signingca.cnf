@@ -61,20 +61,22 @@ x509_extensions     = v3_ca
 countryName                     = Country Name (2 letter code)
 stateOrProvinceName             = State or Province Name (2 letter code)
 localityName                    = Locality Name
-0.organizationName              = Organization Name
-1.organizationName              = Organization Name Part 2
-organizationalUnitName          = Organizational Unit Name
+organizationName                = Organization Name
+0.organizationalUnitName        = Organizational Unit Name Part 1
+1.organizationalUnitName        = Organizational Unit Name Part 2
+2.organizationalUnitName        = Organizational Unit Name Part 3
 commonName                      = Common Name
 emailAddress                    = Email Address
 
 # Optionally, specify some defaults.
-countryName_default             = US
-stateOrProvinceName_default     = GA
-localityName_default            = Fort Benning
-0.organizationName_default      = DoD
-1.organizationName_default      = USASOC
-organizationalUnitName_default  = 75RR
-emailAddress_default            = MockS6@soc.mil
+countryName_default              = US
+stateOrProvinceName_default      = GA
+localityName_default             = Fort Benning
+organizationName_default         = U.S. Government
+0.organizationalUnitName_default = DoD
+1.organizationalUnitName_default = USASOC
+2.organizationalUnitName_default = 75RR
+emailAddress_default             = MockS6@soc.mil
 
 # Optionally, specify some constraints
 countryName_min = 2
