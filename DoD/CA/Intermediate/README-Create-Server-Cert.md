@@ -6,7 +6,7 @@
 
 1. cd into the intermediate directory:
 
-       cd C:/Certificates/Intermediate
+       cd C:/Certificates/DoD/CA/Intermediate
 
 2. Generate the private key
 
