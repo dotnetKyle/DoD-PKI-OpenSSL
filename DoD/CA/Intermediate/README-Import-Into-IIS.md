@@ -1,4 +1,4 @@
-# Create a localhost Server Certificate
+# Import the Certificate into IIS
 
 [Table of Contents](../../../README.md#table-of-contents) / [Create the Intermediate CA](README.md) / [Create a localhost Server Certificate](README-Create-Server-Cert.md) / Import Into IIS
 
