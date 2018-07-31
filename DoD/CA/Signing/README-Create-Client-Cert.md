@@ -6,7 +6,7 @@
 
 1. cd into the SigningCA directory:
 
-       cd C:/Certificates/Signing
+       cd C:/Certificates/DoD/CA/Signing
 
 2. Create a Client private key
 
