@@ -4,17 +4,31 @@
 
 ---------------------------------------------------------------------------------------
 
-1. CD into the Intermediate directory:
+1. CD into Intermediate's public directory where the certificates are located:
 
-       cd C:\Certificates\DoD\CA\Intermediate
+       cd C:\Certificates\DoD\CA\Intermediate\public
 
-2. Create the PFX file:
+2. Create the certificate chain:
+
+   > In order for a browser to trust the localhost certificate, it needs to be able to fill in the gaps from the trusted certificate (`rootca.cer`) to the IIS certificate (`localhost.cer`).  This means that the localhost certificate needs to provide it's Issuer certificate in a certificate chain.  Because rootca.cer will be trusted on the client machine, rootca.cer does not need to be included in the certificate chain.
+
+   Create the chain:
+
+       type localhost.cer intermediate.cer > localhost-chain.cer
+
+3. CD back to the intermediate directory:
+
+       cd ..
+
+4. Create the PFX file:
 
    > In order for you to import your certificates into a windows server (like IIS), you will need to create a PKCS #12 archive.
 
-       openssl pkcs12 -export -in public/localhost.cer -inkey private/localhost.key -out pfx/localhost.pfx
+       openssl pkcs12 -export -in public/localhost-chain.cer -inkey private/localhost.key -out pfx/localhost.pfx
 
-3. Import PFX into IIS:
+   Enter a secure export password.
+
+5. Import the PFX into IIS:
 
    > In order to enable SSL in IIS, you need to import the localhost certificate into IIS.
 
@@ -37,7 +51,42 @@
    | Press `OK` |  |
    | Close the bindings window |  |
 
-4. Require PKI to access the website:
+6. You can test the server and that the certificate chain verifies correctly using the following OpenSSL command:
+   > Note: make sure you have trusted the rootca using mmc.exe.
+
+   First CD into the root ca directory
+
+       cd C:\Certificate\DoD\CA\public
+
+   Run the command to connect to the server and verify the certificate:
+
+       openssl s_client -connect locahost:443 -CAfile rootca.cer
+
+7. Look carefully to verify the output from the command:
+
+   First, you should see a `verify return 1` for each certificate in the chain:
+
+       ...CN = DoD Root CA
+       verify return 1
+       ...CN = DoD Intermediate CA
+       verify return 1
+       ...CN = localhost
+       verify return 1
+
+   Next, you should see a printout of the certificate chain (each certificate's subject (s) and issuer (i):
+
+       ---
+       Certificate chain
+       0 s: ...CN=localhost
+         i: ...CN=DoD Intermediate CA
+       1 s: ...CN=DoD Intermediate CA
+         i: ...CN=DoD Root CA
+
+   Lastly, look for:
+
+       Verification: OK
+
+8. Require PKI to access the website:
 
    | Step | Figure |
    | --- | --- |

@@ -15,6 +15,7 @@ crlnumber
 *.pem
 *.cer
 *.key
+*.p12
 
 # User-specific files
 *.suo
